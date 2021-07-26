@@ -15,9 +15,9 @@ def test_fibbonaci_service_with_positive_numbers(client, number, expected):
 def test_fibbonaci_service_with_negative_numbers(client,):
     url = f"{reverse('fibbonaci-number')}?n=-1"
     response = client.get(url)
-    assert response.status_code == 404
+    assert response.status_code == 400
 
 def test_fibbonaci_service_with_string(client,):
     url = f"{reverse('fibbonaci-number')}?n=suvendu"
     response = client.get(url)
-    assert response.status_code == 404
+    assert response.status_code == 400
